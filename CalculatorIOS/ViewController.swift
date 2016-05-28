@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var calc = calcInput()
     var hasInput1: Bool = false
     var hasInput2: Bool = false
+    var resultReturned: Bool = false
     var input: String = " " //holds the input from view
     var prevOp: String = " "
     var input1: Double = 0
@@ -31,11 +32,15 @@ class ViewController: UIViewController {
         
         // number was input so append it to view
         if (Double(input) != nil){
+            if (resultReturned == true) { self.calcTextField.text = ""; resultReturned = false }
             self.calcTextField.text = self.calcTextField.text + input
         }
         
         // operation was input
         if (Double(input) == nil){
+            
+            // op was hit so we dont need to clear the view yet.
+            resultReturned = false
             
             // handle the case that are not "resuable logic"
             if (input == "C"){ clearCalc(); return}
@@ -71,6 +76,7 @@ class ViewController: UIViewController {
                 opCount -= 2
                 hasInput1 = false
                 hasInput2 = false
+                resultReturned = true
             }
             prevOp = input
         }
