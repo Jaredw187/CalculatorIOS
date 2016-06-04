@@ -49,7 +49,7 @@ class ViewController: UIViewController {
                 self.calcTextField.text = calc.inputInterpretation("%", input1: Double(self.calcTextField.text)!, input2: 0)
                 return
             }
-            if (input == "N") { self.calcTextField.text = "-" + self.calcTextField.text; return }
+            if (input == "N") { self.calcTextField.text = calc.inputInterpretation("N", input1: Double(self.calcTextField.text)! , input2: 0); return }
             
             // set up the input
             if (hasInput1 == true) {

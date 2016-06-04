@@ -33,7 +33,7 @@ class calcInput {
         if (operation == "-")  { sub(input1, input2: input2) }
         if (operation == "X")  { mult(input1, input2: input2) }
         if (operation == "/")  { div(input1, input2: input2) }
-        if (operation == "N"){ negate(input1) }
+        if (operation == "N")  { negate(input1) }
         
         print(String(input1) + operation + String(input2) + " = " + String(self.value))
         
